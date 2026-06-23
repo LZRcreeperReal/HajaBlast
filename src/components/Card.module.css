@@ -1,0 +1,124 @@
+.card {
+  position: relative;
+  width: 72px;
+  height: 100px;
+  border-radius: 8px;
+  background: #f4eedc;
+  border: 2px solid #d4c89a;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.card.small {
+  width: 52px;
+  height: 74px;
+}
+
+.card.small .rank { font-size: 11px; }
+.card.small .suit { font-size: 9px; }
+.card.small .center { font-size: 18px; }
+
+.card.highlight {
+  border-color: #c9a84c;
+  box-shadow: 0 0 0 2px #c9a84c, 0 3px 16px rgba(201,168,76,0.5);
+  transform: translateY(-6px);
+}
+
+.card.dimmed {
+  opacity: 0.38;
+}
+
+.red { color: #9b1c2e; }
+.black { color: #1a1a1a; }
+
+.corner {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.cornerBL {
+  top: auto;
+  left: auto;
+  bottom: 5px;
+  right: 7px;
+  transform: rotate(180deg);
+}
+
+.rank {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.suit {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.center {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.card.small .center {
+  font-size: 20px;
+}
+
+/* Face down */
+.faceDown {
+  background: linear-gradient(135deg, #0e3b2c 0%, #145238 50%, #0e3b2c 100%);
+  border-color: #c9a84c;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(201,168,76,0.08),
+      rgba(201,168,76,0.08) 3px,
+      transparent 3px,
+      transparent 9px
+    );
+}
+
+.backPattern {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  color: rgba(201,168,76,0.6);
+  letter-spacing: 1px;
+}
+
+.multiplierBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #c9a84c;
+  color: #0e3b2c;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}

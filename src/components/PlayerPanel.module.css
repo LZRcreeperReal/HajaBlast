@@ -1,0 +1,154 @@
+.panel {
+  background: rgba(14, 59, 44, 0.55);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.panel.active {
+  border-color: var(--player-color, #c9a84c);
+  box-shadow: 0 0 0 1px var(--player-color, #c9a84c), 0 4px 24px rgba(201,168,76,0.15);
+}
+
+.panel.eliminated {
+  opacity: 0.4;
+  filter: grayscale(0.6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f4eedc;
+  letter-spacing: 0.03em;
+}
+
+.outBadge {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #9b1c2e;
+  border: 1px solid #9b1c2e;
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.08em;
+}
+
+.chipRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chipCount {
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  color: #d4c89a;
+}
+
+.cards {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.swapBtn {
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.swapBtn:hover:not(:disabled) {
+  background: #c9a84c;
+  color: #0e3b2c;
+}
+
+.rollRow {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rollItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rollLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: #d4c89a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rollNum {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: #f4eedc;
+  font-weight: 700;
+}
+
+.resultRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+  padding: 7px 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.resultDesc {
+  font-size: 13px;
+  color: #d4c89a;
+  font-style: italic;
+}
+
+.resultTotal {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #c9a84c;
+}

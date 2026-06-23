@@ -1,0 +1,32 @@
+.chipStack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Dashed edge ring — classic chip style */
+.chip::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,0.35);
+}
+
+.chipInner {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: rgba(0,0,0,0.75);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
