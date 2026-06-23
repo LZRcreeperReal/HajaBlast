@@ -1,0 +1,74 @@
+/* ===========================
+   HAJA RUMBLE — Global Styles
+   =========================== */
+
+:root {
+  --felt: #0e3b2c;
+  --felt-light: #145238;
+  --felt-dark: #091f18;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --gold-pale: #f5e6b8;
+  --crimson: #9b1c2e;
+  --crimson-bright: #c0253a;
+  --ivory: #f4eedc;
+  --ivory-dim: #d4c89a;
+  --smoke: rgba(255,255,255,0.07);
+  --chip-blue: #2255aa;
+  --chip-red: #aa2222;
+  --chip-black: #1a1a1a;
+  --shadow-deep: 0 8px 40px rgba(0,0,0,0.6);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.5);
+  --radius-card: 10px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Crimson Text', Georgia, serif;
+  background: var(--felt-dark);
+  color: var(--ivory);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Felt texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--felt-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }

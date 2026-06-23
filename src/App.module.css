@@ -1,0 +1,435 @@
+/* =====================
+   APP LAYOUT & TITLE
+   ===================== */
+
+/* ── Title Screen ── */
+.titleScreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 60% 30%, rgba(155,28,46,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(34,85,170,0.14) 0%, transparent 50%),
+    linear-gradient(160deg, #091f18 0%, #0e3b2c 60%, #091f18 100%);
+  position: relative;
+}
+
+.titleScreen::after {
+  content: '♠ ♥ ♦ ♣';
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  opacity: 0.08;
+  letter-spacing: 20px;
+}
+
+.titleCard {
+  background: rgba(9,31,24,0.7);
+  border: 2px solid rgba(201,168,76,0.35);
+  border-radius: 20px;
+  padding: 52px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.7), inset 0 0 60px rgba(0,0,0,0.3);
+  max-width: 440px;
+  width: 90vw;
+  backdrop-filter: blur(6px);
+}
+
+.titleSuit {
+  font-size: 22px;
+  letter-spacing: 14px;
+  color: rgba(201,168,76,0.45);
+}
+
+.titleText {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(38px, 10vw, 58px);
+  font-weight: 900;
+  color: #c9a84c;
+  text-align: center;
+  line-height: 1.05;
+  text-shadow: 0 0 40px rgba(201,168,76,0.4), 0 2px 0 rgba(0,0,0,0.5);
+  letter-spacing: 0.02em;
+}
+
+.titleSub {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #d4c89a;
+  opacity: 0.75;
+  letter-spacing: 0.05em;
+}
+
+.playerSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(212,200,154,0.65);
+}
+
+.selectButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.selectBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(201,168,76,0.3);
+  color: #d4c89a;
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.18s;
+}
+
+.selectBtn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.selectBtnActive {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0e3b2c;
+  box-shadow: 0 0 16px rgba(201,168,76,0.4);
+}
+
+.startBtn {
+  background: linear-gradient(135deg, #c9a84c 0%, #a8852e 100%);
+  color: #0e3b2c;
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: none;
+  padding: 16px 42px;
+  border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.35), 0 2px 0 rgba(0,0,0,0.3);
+  transition: transform 0.14s, box-shadow 0.14s;
+  text-transform: uppercase;
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201,168,76,0.45), 0 2px 0 rgba(0,0,0,0.3);
+}
+
+.startBtn:active {
+  transform: translateY(0);
+}
+
+.rulesSummary {
+  font-size: 13px;
+  color: rgba(212,200,154,0.5);
+  text-align: center;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── Game Screen ── */
+.gameScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(20,82,56,0.6) 0%, transparent 60%),
+    linear-gradient(180deg, #091f18 0%, #0d3326 100%);
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  background: rgba(9,31,24,0.5);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 0.04em;
+}
+
+.headerCenter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phasePill {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0e3b2c;
+  background: #c9a84c;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.roundBadge {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: rgba(212,200,154,0.55);
+  letter-spacing: 0.06em;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: rgba(212,200,154,0.6);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.15s;
+}
+
+.resetBtn:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+/* Arena */
+.arena {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 220px 220px;
+  grid-template-rows: 1fr;
+  gap: 16px;
+  padding: 20px;
+  min-height: 0;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .arena {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    overflow-y: auto;
+  }
+}
+
+/* Players grid */
+.playersGrid {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.playersGrid.players2 { grid-template-columns: 1fr 1fr; }
+.playersGrid.players3 { grid-template-columns: 1fr 1fr 1fr; }
+.playersGrid.players4 { grid-template-columns: 1fr 1fr; }
+
+@media (max-width: 700px) {
+  .playersGrid.players2,
+  .playersGrid.players3,
+  .playersGrid.players4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Center panel */
+.centerPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.potWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.actionBtn {
+  background: linear-gradient(135deg, #c9a84c 0%, #a8852e 100%);
+  color: #0e3b2c;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(201,168,76,0.3);
+  transition: transform 0.12s, box-shadow 0.12s;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.actionBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.4);
+}
+
+.hint {
+  font-size: 13px;
+  color: rgba(212,200,154,0.55);
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 4px;
+}
+
+/* Roll key */
+.rollKey {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+}
+
+.rollKeyTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.55);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.rollKeyGrid {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 4px 8px;
+  font-size: 12px;
+}
+
+.rollKeyGrid span:nth-child(odd) {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #c9a84c;
+  text-align: center;
+}
+
+.rollKeyGrid span:nth-child(even) {
+  color: rgba(212,200,154,0.65);
+}
+
+/* Game over */
+.gameOverPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.trophyIcon {
+  font-size: 36px;
+  animation: bounce 0.6s ease infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-6px); }
+}
+
+.winnerText {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 20px;
+  color: #c9a84c;
+  font-weight: 700;
+}
+
+.winnerSub {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  color: #d4c89a;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* Log panel */
+.logPanel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(9,31,24,0.5);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: calc(100vh - 120px);
+}
+
+.logTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.45);
+  padding: 10px 14px 6px;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+
+.logList {
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.logEntry {
+  font-size: 12px;
+  color: rgba(212,200,154,0.65);
+  padding: 4px 14px;
+  line-height: 1.45;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  animation: fadeIn 0.25s ease;
+}
+
+.logEntry:first-child {
+  color: rgba(212,200,154,0.9);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+  .logPanel {
+    max-height: 200px;
+  }
+}
